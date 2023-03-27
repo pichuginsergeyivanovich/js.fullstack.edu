@@ -1,3 +1,4 @@
+"use strict";
 var List = (function () {
     function List() {
         this._bag = new Array();

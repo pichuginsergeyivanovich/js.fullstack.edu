@@ -1,3 +1,4 @@
+"use strict";
 var LinkedListNode = (function () {
     function LinkedListNode(data) {
         this.data = data;
