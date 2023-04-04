@@ -1,0 +1,15 @@
+<script src="PasswordRequirement.js"></script>
+<script src="LettersPasswordRequirement.js"></script>
+<script src="PasswordBuilder.js"></script>
+<script>
+
+let builder = new PasswordBuilder(16);
+
+
+for(let i=0;i<10;i++)
+{
+    let p =builder.build();
+
+    console.log(p);
+}
+</script>

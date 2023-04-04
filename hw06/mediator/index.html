@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="IMediator.js"></script>
+<script src="Human.js"></script>
+<script src="Language.js"></script>
+<script src="People.js"></script>
+
+<script>
+
+
+let people=new People();
+let lrus=new Language('russian');
+let leng=new Language('english');
+
+for(let i=0;i<20;i++){
+	let r=Math.random().toFixed(0);
+	console.log(r);
+
+	if(r==1)
+		people.add(new Human(lrus));
+	else
+		people.add(new Human(leng));
+
+}
+
+people.communicate();
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>

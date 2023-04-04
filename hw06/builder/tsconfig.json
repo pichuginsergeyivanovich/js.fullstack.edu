@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "alwaysStrict": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true
+    },
+    "files": [
+      "LettersPasswordRequirement.ts",
+      "PasswordBuilder.ts",
+      "PasswordRequirement.ts"
+    ]
+  }
