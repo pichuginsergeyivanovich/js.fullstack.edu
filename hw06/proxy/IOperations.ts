@@ -1,0 +1,3 @@
+interface IOperations{
+    SomeLongRunningWebRequest():string;
+}

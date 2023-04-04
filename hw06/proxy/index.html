@@ -1,0 +1,16 @@
+<script src="RealOperations.js"></script>
+<script src="CachedOperations.js"></script>
+<script>
+
+let rops = new RealOperations();
+let res=rops.SomeLongRunningWebRequest();
+console.log(res);
+
+var сops = new CachedOperations(rops);
+
+for(let i=0;i<5;i++){
+    res=сops.SomeLongRunningWebRequest();
+    console.log(res);
+}
+
+</script>

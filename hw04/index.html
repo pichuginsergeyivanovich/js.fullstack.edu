@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="app.js"></script>
+<script src="DLinkedList.js"></script>
+<script src="List.js"></script>
+
+<script>
+hello();
+
+let dll=new DLinkedList();
+dll.add("1")
+dll.add("2")
+dll.add("3")
+dll.add("4")
+dll.print();
+s=dll.search("4");
+if(s!=null){
+	dll.delete(s);
+//	dll.update(s,"5");
+}
+dll.print();
+
+
+
+
+
+let l=new List();
+l.add(1);
+l.add(2);
+console.log(l.length());
+l.delete(2);
+l.search(1);
+console.log(l.length());
+l.print();
+</script>
+</head>
+<body>
+</body>
+</html>

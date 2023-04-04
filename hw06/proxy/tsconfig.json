@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "alwaysStrict": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "lib": ["es5", "es6", "dom"]
+    },
+    "files": [
+      "RealOperations.ts",
+"IOperations.ts","CachedOperations.ts"
+    ]
+  }

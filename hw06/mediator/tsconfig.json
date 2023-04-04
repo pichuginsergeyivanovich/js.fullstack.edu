@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "alwaysStrict": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true
+    },
+    "files": [
+      "AbstractHuman.ts",
+      "Human.ts",
+      "People.ts",
+      "IMediator.ts",
+      "Language.ts",
+      "IPeople.ts"
+    ]
+  }

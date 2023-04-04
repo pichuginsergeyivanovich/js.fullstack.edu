@@ -1,0 +1,38 @@
+version: '3'
+
+networks:
+  hub:
+    driver: bridge
+
+services:
+  web-server-app:
+    container_name: web-server-app
+    build: 
+      context: ./web-server-app/
+    ports:
+        - 8888:9999
+    networks:
+      - hub
+
+  nginx:
+    image: nginx
+    restart: always
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - 8080:8080
+    networks:
+      - hub
+
+  postgresdb:
+    image: postgres:latest
+    container_name: postgresdb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+    volumes:
+      - ./postgresdb/data:/var/lib/postgresql/data
+    ports:
+      - 15432:5432
+
