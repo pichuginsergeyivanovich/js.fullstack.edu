@@ -46,129 +46,9 @@ body{
   background-color:#ffffff;
 
 }
-.balance{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr 4fr;
-}
-.balance>div{
-#  border: 1px solid black;
-  padding:4px;
-#  background-color:#ffffff;
-
-}
-.block-title-header{
-    display:grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
-    align-items:center;
-}
-.block-title-header-title{
-    font-family:sans-serif;
-    font-size:x-large;
-    font-weight: bold;
-}
-.block-title-header-action{
-    text-align: right;
-    padding: 2px;
-}
-.block-title-header-action>img{
-    width:16px;
-}
-
-.block-balance-row{
-    display:grid;
-    align-items:center;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 1fr;
-    border-bottom: lightgray 1px solid;
-    padding: 4px;
-}
-
-.block-balance-sign{
-    font-size: 40px;
-    font-family: fantasy;
-    color: #cc868c;
-}
-.block-balance-wallet{
-   text-align: right;
-}
-.block-balance-wallet>img{
-    width:32px;
-}
-.block-balance-value{
-    font-size: xxx-large;
-    font-family: cursive;
-    color: #000000;
-    font-weight: 700;
-}
-
-.block-balance-rates{
-    display:grid;
-    align-items:center;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(10,1fr);
-    overflow-y:auto;
-}
-.block-balance-rates::-webkit-scrollbar {
-  width: 3px;
-  height: 8px;
-}
-.block-balance-rates::-webkit-scrollbar-thumb {
-  background: #ccc;
-}
-
-.block-balance-rates-table-header{
-    font-family: monospace;
-    color: #cc868c;
-    margin-top:8px;
-    margin-bottom: 8px;
-}
-.block-balance-rates-row{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 32px 100px auto;
-    grid-template-rows: 1fr;
-    text-align: right;
-}
-.block-balance-rates-row-sign{
-    margin-top:4px;
-    margin-left:4px;
-}
-.block-balance-rates-row-price{
-    font-family: cursive;
-    background-image: none !important;
-    font-size: small;
-    width:unset !important;
-    height:unset !important;
-
-}
-.rates-down{
-    color:red;
-    background-image: url("down.png");
-    background-size: 10px 14px;
-    background-repeat: no-repeat;
-    width:18px;
-    height:23px;
-}
-.rates-up{
-    color:green;
-    background-image: url("up.png");
-    background-size: 10px 14px;
-    background-repeat: no-repeat;
-    width:18px;
-    height:23px;
-}
-.block-balance-rates-row-day{
-    font-family: monospace;
-    font-size: large;
-    opacity: 0.3;
-    margin-right:16px;
-}
-
-
-
 </style>
+<link rel="stylesheet" href="balance.css">
+<link rel="stylesheet" href="rates.css">
 </head>
 <body>
 <div class="container">
@@ -243,7 +123,41 @@ body{
 </div>
 
 <div class="bottom">
-<div>Rates</div>
+
+<div>
+	<div class="block-rates-title-header"><div class="block-title-header-title">Rates</div><div class="block-rates-title-header-currency">in USD&nbsp;<img src="cur-down.png"/></div><div class="block-title-header-action"><img src="settings.png"/></div></div>
+        <div class="block-rates-rates">
+
+
+ 	        <div class="block-rates-rates-row">
+           	        <div class="block-rates-rates-row-ccsign"><img src="bitcoin.png"/></div>
+           	        <div class="block-rates-rates-row-ccname">Bitcoin</div>
+           	        <div class="block-rates-rates-row-ccprice">$&nbsp;4&nbsp;319,26</div>
+               </div>
+ 	        <div class="block-rates-rates-row">
+           	        <div class="block-rates-rates-row-ccsign"><img src="monero.png"/></div>
+           	        <div class="block-rates-rates-row-ccname">Monero</div>
+           	        <div class="block-rates-rates-row-ccprice">$&nbsp;57,84</div>
+               </div>
+ 	        <div class="block-rates-rates-row">
+           	        <div class="block-rates-rates-row-ccsign"><img src="bitshares.png"/></div>
+           	        <div class="block-rates-rates-row-ccname">Bitshares</div>
+           	        <div class="block-rates-rates-row-ccprice">$&nbsp;0,1690</div>
+               </div>
+ 	        <div class="block-rates-rates-row">
+           	        <div class="block-rates-rates-row-ccsign"><img src="dash.png"/></div>
+           	        <div class="block-rates-rates-row-ccname">Dash</div>
+           	        <div class="block-rates-rates-row-ccprice">$&nbsp;172,19</div>
+               </div>
+ 	        <div class="block-rates-rates-row">
+           	        <div class="block-rates-rates-row-ccsign"><img src="litecoin.png"/></div>
+           	        <div class="block-rates-rates-row-ccname">Litecoin</div>
+           	        <div class="block-rates-rates-row-ccprice">$&nbsp;46,50</div>
+               </div>
+
+        </div>
+</div>
+
 <div>Feed</div>
 <div>Wallets</div>
 </div>
