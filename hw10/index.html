@@ -1,56 +1,28 @@
 <html>
 <head>
-<style>
 
-body{
-    background-color:#f4f5f9;
-}
 
-.container{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows:1fr 1fr;
-    gap:40px;
-    padding:80px;
-    background-color:#f4f5f9;
-}
-.container>div{
- border-radius: 25px;
-# border: 1px solid blue;
-    background-color:#f4f5f9;
-}
-
-.top{
-    display:grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows:350px;
-    gap:40px;
-}
-.top>div{
-  border-radius: 25px;
-#  border: 1px solid black;
-  padding:20px;
-  background-color:#ffffff;
-}
-.bottom{
-    display:grid;
-    gap:40px;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows:350px;
-
-}
-.bottom>div{
-  border-radius: 25px;
-#  border: 1px solid black;
-  padding:20px;
-  background-color:#ffffff;
-
-}
-</style>
+<link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="balance.css">
 <link rel="stylesheet" href="rates.css">
+<link rel="stylesheet" href="feed.css">
+<link rel="stylesheet" href="wallets.css">
+<link rel="stylesheet" href="operations.css">
+
 </head>
 <body>
+<div class="header">
+<div class="header-wallet header-icon"><img src="wallet-2.png"/></div>
+<div class="header-wallet header-text">CryptoWallet</div>
+<div class="header-link header-text"><div>Dashboard</div><div class="header-link-active"></div></div>
+<div class="header-link header-text">Market</div>
+<div class="header-link header-text">Trends</div>
+<div class="header-splitter">&nbsp;</div>
+<div class="header-zoom header-icon"><img src="zoom.png"/></div>
+<div class="header-profile header-icon"><img src="profile.png"/></div>
+<div class="header-hamburger header-icon"><img src="hamburger.png"/></div>
+
+</div>
 <div class="container">
 
 
@@ -118,8 +90,151 @@ body{
 
         </div>
 </div>
-<div>Adv</div>
-<div>Operations</div>
+<div class="block-adv">
+	<div class="block-adv-title">
+		<div>UNLOCK</div>
+		<div class="block-adv-title-sm">THE ULTIMATE</div>
+		<div>POWER!</div>
+	</div>
+	<div class="block-adv-button">Get Crypto Pro</div>
+</div>
+<!--Operations-->
+<div class="block-operations">
+<div class="block-operations-header">
+	<div class="block-operations-header-title">Operations</div>
+        <div class="block-operations-header-zoom"><img src="zoom.png"/></div>
+        <div class="block-operations-header-action"><img src="settings.png"/></div>
+</div>
+<div class="block-operations-list">
+	<div class="block-operations-list-row-actions favorite">
+		<div class="block-operations-list-item block-operations-list-item-control">
+				<input type="text" value="1"/>
+				<select>
+				      <option>ETH</option>
+				      <option>USD</option>
+		        	</select>			
+
+	       </div>
+		
+		<div class="block-operations-list-item block-operations-list-item-control">
+				<input type="text" value="&asymp;196,8"/>
+				<select>
+				      <option>ETH</option>
+				      <option selected>USD</option>
+		        	</select>			
+
+			</div>
+		
+		<div class="block-operations-list-item block-wallets-list-item-button buy">Buy</div>
+		<div class="block-operations-list-item block-wallets-list-item-button sell">Sell</div>
+	</div>
+<div class="block-operations-list-inner">
+	<div class="block-operations-list-row">
+		<div class="block-operations-list-item-sign">
+			<img src="change.png"/>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-change">
+			<div class="block-operations-list-item-name">Change</div>
+			<div class="block-operations-list-item-change">
+			        <span class="block-operations-list-item-change-price">0,004</span>
+			        <span class="block-operations-list-item-change-tiker">BTC</span>
+			        <div class="block-operations-list-item-change-image"><image src="right.png"/></div>
+			        <span class="block-operations-list-item-change-price">0,5012</span>
+			        <span class="block-operations-list-item-change-tiker">XMR</span>
+                        </div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">Fee</div>
+			<div class="block-wallets-list-item-price">
+			        <span class="block-operations-list-item-change-price">0,01</span>
+			        <span class="block-operations-list-item-change-tiker">USD</span>
+			</div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">License</div>
+			<div class="block-wallets-list-item-price">ETF&nbsp;8</div>
+		</div>
+
+		<div class="block-operations-list-item-doc">
+			<img src="doc.png"/>
+		</div>
+		<div class="block-operations-list-item-star">
+			<img src="star.png"/>
+		</div>
+
+	</div>
+	<div class="block-operations-list-row">
+		<div class="block-operations-list-item-sign">
+			<img src="sell.png"/>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-change">
+			<div class="block-operations-list-item-name">Sell</div>
+			<div class="block-operations-list-item-change">
+			        <span class="block-operations-list-item-change-price">200,12</span>
+			        <span class="block-operations-list-item-change-tiker">XRP</span>
+			        <div class="block-operations-list-item-change-image"><image src="right-2.png"/></div>
+			        <span class="block-operations-list-item-change-price">40,5489</span>
+			        <span class="block-operations-list-item-change-tiker">USD</span>
+                        </div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">Fee</div>
+			<div class="block-wallets-list-item-price">
+			        <span class="block-operations-list-item-change-price">0,05</span>
+			        <span class="block-operations-list-item-change-tiker">USD</span>
+			</div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">License</div>
+			<div class="block-wallets-list-item-price">ARP&nbsp;10</div>
+		</div>
+
+		<div class="block-operations-list-item-doc">
+			<img src="doc.png"/>
+		</div>
+		<div class="block-operations-list-item-star">
+			<img src="star.png"/>
+		</div>
+
+	</div>
+	<div class="block-operations-list-row">
+		<div class="block-operations-list-item-sign">
+			<img src="bonus.png"/>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-change">
+			<div class="block-operations-list-item-name">Bonus</div>
+			<div class="block-operations-list-item-change">
+			        <span class="block-operations-list-item-change-price">+14,06</span>
+			        <span class="block-operations-list-item-change-tiker">USD</span>
+			        <div class="block-operations-list-item-change-image"></div>
+			        <span class="block-operations-list-item-change-price"></span>
+			        <span class="block-operations-list-item-change-tiker">(CVCA-2)</span>
+                        </div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">Fee</div>
+			<div class="block-wallets-list-item-price">
+			        <span class="block-operations-list-item-change-price">0,20</span>
+			        <span class="block-operations-list-item-change-tiker">USD</span>
+			</div>
+		</div>
+		<div class="block-operations-list-item-change-dbl block-operations-list-item-license">
+			<div class="block-wallets-list-item-name">License</div>
+			<div class="block-wallets-list-item-price">FCV&nbsp;3</div>
+		</div>
+
+		<div class="block-operations-list-item-doc">
+			<img src="doc.png"/>
+		</div>
+		<div class="block-operations-list-item-star">
+			<img src="star.png"/>
+		</div>
+
+	</div>
+</div>
+
+</div>
+</div>
 </div>
 
 <div class="bottom">
@@ -157,9 +272,159 @@ body{
 
         </div>
 </div>
+<!--Feed-->
+<div>
+	<div class="block-feed-title-header"><div class="block-feed-header-title">Feed</div>
+<div class="block-feed-header-zoom"><img src="zoom.png"/></div><div class="block-feed-header-action"><img src="settings.png"/></div></div>
+        <div class="block-feed-list">
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Two versions of Digital Dollar Emerge as Contenders? but Unlikely to Come Soon</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Cointelegraph</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">8 hours ago</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">US Debt Hits $24 Trillion as Bitcoin Marches On</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Decrypt</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;10</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Monero Price is the Only One Outperforming Bitcoin?</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Cryptopolitan</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;8</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Crypto Can Save User Data Amid Plants for Massive Surveillance</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at WhoKnowsCryptoSource</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;7</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Two versions of Digital Dollar Emerge as Contenders? but Unlikely to Come Soon</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Cointelegraph</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">8 hours ago</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">US Debt Hits $24 Trillion as Bitcoin Marches On</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Decrypt</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;10</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Monero Price is the Only One Outperforming Bitcoin?</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at Cryptopolitan</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;8</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
+ 	        <div class="block-feed-list-row">
+           	        <div class="block-feed-list-row-markup"></div>
+           	        <div class="block-feed-list-row-feeditem">
+           	            <div class="block-feed-list-row-feeditem-top">Crypto Can Save User Data Amid Plants for Massive Surveillance</div>
+                            <div class="block-feed-list-row-feeditem-bottom">
+                                <div class="block-feed-list-row-feeditem-bottom-src">at WhoKnowsCryptoSource</div>
+                                <div>&nbsp;</div>
+                                <div class="block-feed-list-row-feeditem-bottom-time">Apr&nbsp;7</div>
+                            </div>
+                        </div>
+           	        <div class="block-feed-list-row-eol">></div>
+               </div>
 
-<div>Feed</div>
-<div>Wallets</div>
+        </div>
+
+</div>
+<!--Wallets-->
+<div class="block-wallets">
+<div class="block-wallets-header">
+	<div class="block-wallets-header-title">Wallets</div>
+        <div class="block-wallets-header-action"><img src="settings.png"/></div>
+</div>
+<div class="block-wallets-list">
+	<div class="block-wallets-list-row favorite">
+		<div class="block-wallets-list-item-sign">
+			<img src="favorite-wallet.png"/>
+		</div>
+		<div class="block-wallets-list-item">
+			<div class="block-wallets-list-item-name">Main Account</div>
+			<div class="block-wallets-list-item-price">$&nbsp;3035,89</div>
+		</div>
+		<div class="block-wallets-list-item-image">
+			<img src="usd-wallet.png"/>
+		</div>
+	</div>
+	<div class="block-wallets-list-row">
+		<div class="block-wallets-list-item-sign">
+			<img src="non-favorite-wallet.png"/>
+		</div>
+		<div class="block-wallets-list-item">
+			<div class="block-wallets-list-item-name">Crypto Markets</div>
+			<div class="block-wallets-list-item-price">B&nbsp;0,00403</div>
+		</div>
+		<div class="block-wallets-list-item-image">
+			<img src="bitcoin-wallet.png"/>
+		</div>
+	</div>
+
+	<div class="block-wallets-list-row">
+		<div class="block-wallets-list-item-sign">
+			<img src="non-favorite-wallet.png"/>
+		</div>
+		<div class="block-wallets-list-item">
+			<div class="block-wallets-list-item-name">Investments</div>
+			<div class="block-wallets-list-item-price">R&nbsp;2,14594</div>
+		</div>
+		<div class="block-wallets-list-item-image">
+			<img src="r-wallet.png"/>
+		</div>
+	</div>
+</div>
+</div>
+
+
 </div>
 
 </div>

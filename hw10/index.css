@@ -1,0 +1,143 @@
+body{
+    background-color:#f4f5f9;
+}
+.header{
+    display:flex;
+    background-color:#ffffff;
+    width:100%;
+    align-items: center;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:60px;
+}
+.header-icon>img{
+	width: 24px;
+}
+
+.header-link-active{
+	border-bottom:2px rgb(241, 146, 28) solid;
+	width:50%;
+}
+
+.header-link{
+	font-family: sans-serif;
+        font-size: large;
+        font-weight: bold;
+}
+
+.header-wallet{
+	color:rgb(241, 146, 28);
+	font-family: sans-serif;
+        font-size: large;
+        font-weight: bold;
+}
+.header-icon{
+	padding-left:16px;
+	padding-right:16px;
+}
+.header-text{
+	padding-left:16px;
+	padding-right:16px;
+        margin-bottom:4px;
+}
+
+.header-splitter{
+	flex-grow: 2;
+}
+.header-hamburger{
+	width:100px;	
+}
+.header-group-left{
+    display:grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows:1fr;
+    align-items:left;
+}
+
+.header-group-right{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr;
+    align-items:right;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:40px;
+    padding:80px;
+    background-color:#f4f5f9;
+}
+.container>div{
+ border-radius: 25px;
+# border: 1px solid blue;
+    background-color:#f4f5f9;
+}
+
+.top{
+    display:grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows:350px;
+    gap:40px;
+}
+.top>div{
+  border-radius: 25px;
+#  border: 1px solid black;
+  padding:20px;
+  background-color:#ffffff;
+}
+.bottom{
+    display:grid;
+    gap:40px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows:350px;
+
+}
+.bottom>div{
+  border-radius: 25px;
+#  border: 1px solid black;
+  padding:20px;
+  background-color:#ffffff;
+
+}
+
+
+.block-adv{
+	background-image: linear-gradient(to bottom right, rgb(54,61,71), rgb(65, 134, 238));
+        color:#ffffff;
+        display:grid;
+        grid-template-columns: auto;
+        grid-template-rows:auto 1fr;
+        align-items:center;
+}
+
+.block-adv::-webkit-scrollbar {
+  width: 3px;
+  height: 8px;
+}
+.block-adv::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+.block-adv-title{
+  font-family: sans-serif;
+  font-size:60px;
+}
+.block-adv-title-sm{
+  font-size:50px;
+}
+
+.block-adv-button{
+  font-family: sans-serif;
+  border-radius: 25px;
+  border: 1px solid #ffffff;
+  padding-top:16px;
+  padding-bottom:16px;
+  padding-left:48px;
+  padding-right:48px;
+  margin-left:16px;
+  margin-right:16px;
+  text-align:center;
+  width: max-content;
+
+}

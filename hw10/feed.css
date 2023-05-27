@@ -1,0 +1,100 @@
+.block-feed-title-header{
+    display:grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 1fr;
+    align-items:center;
+    margin-bottom: 8px;
+}
+.block-feed-header-title{
+    font-family:sans-serif;
+    font-size:x-large;
+    font-weight: bold;
+    margin-right:4px;
+}
+.block-feed-header-zoom{
+    font-family:sans-serif;
+    font-size:x-large;
+    font-weight: bold;
+    color: #cccccc;
+}
+.block-feed-header-zoom>img{
+	width:24px;
+}
+.block-feed-header-action{
+    text-align: right;
+    padding: 2px;
+}
+.block-feed-header-action>img{
+    width:16px;
+}
+.block-feed-list{
+    align-items:center;
+    height: 95%;
+    overflow-y:auto;
+}
+
+.block-feed-list::-webkit-scrollbar {
+  width: 3px;
+  height: 8px;
+}
+.block-feed-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+
+
+.block-feed-list-row{
+    display:grid;
+    grid-template-columns: 5px auto 16px;
+    grid-template-rows: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    align-items: center;
+}
+.block-feed-list-row-markup{
+  border-radius: 4px;
+  border: 3px solid #cccccc;
+  background-color:#ffffff;
+  height: 90%;
+    
+}
+.block-feed-list-row-feeditem{
+    padding-left: 20px;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+#    align-items:center;
+#    margin-bottom: 8px;
+
+}
+.block-feed-list-row-feeditem-top{
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+}
+.block-feed-list-row-feeditem-bottom{
+    margin-top:4px;
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr;
+}
+.block-feed-list-row-feeditem-bottom-src{
+    color: gray;
+    font-family: sans-serif;
+    font-size: larger;  
+}
+.block-feed-list-row-feeditem-bottom-time{
+    color: rgb(230, 183, 129);
+    font-family: sans-serif;
+    font-size: larger;  
+    text-align:right;
+    padding-right:16px;
+
+}
+.block-feed-list-row-eol{
+    color: lightgray;
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: bold;    
+}
