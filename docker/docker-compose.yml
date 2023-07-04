@@ -1,0 +1,43 @@
+version: '2.4'
+
+networks:
+  jshw:
+    driver: bridge
+
+volumes:
+  data:
+  pgadmin-data:
+
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+#      - ./volumes/postgres-db:/var/lib/postgresql/backup
+#      - ./volumes/postgres-db/createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+#      - ./volumes/postgres-db/access.sh:/docker-entrypoint-initdb.d/access.sh
+#      - ./volumes/postgres-db/restore.sh:/docker-entrypoint-initdb.d/restore.sh
+    networks:
+      - jshw
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: pgadmin
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+    networks:
+      - jshw
+
