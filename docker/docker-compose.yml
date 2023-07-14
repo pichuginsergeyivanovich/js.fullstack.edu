@@ -38,6 +38,31 @@ services:
       PGADMIN_DEFAULT_PASSWORD: pgadmin
     volumes:
       - ./pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres-db
     networks:
       - jshw
+
+  gitcraft:
+    image: ssh-server-gitcraft:latest
+    container_name: gitcraft
+    restart: always
+    volumes:
+      - ./ssh-server/data:/app
+      - ./ssh-server/server:/app/server
+#      - ./ssh-server/data/authorized_keys/authorized_keys:/home/git/.ssh/authorized_keys
+#      - ./ssh-server/keys/root_id_rsa:/root/.ssh/id_rsa
+#      - ./ssh-server/keys/root_id_rsa.pub:/root/.ssh/id_rsa.pub
+      - ./ssh-server/keys/root:/root/.ssh
+      - ./ssh-server/keys/git:/home/git/.ssh
+    depends_on:
+      - postgres-db
+    networks:
+      - jshw
+#    environment:
+    ports:
+      - 22:22
+      - 8080:8080
+
+
 

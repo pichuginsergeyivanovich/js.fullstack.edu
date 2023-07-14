@@ -1,0 +1,20 @@
+version: '2.4'
+
+networks:
+  jshw:
+    driver: bridge
+
+services:
+  gitcraft:
+    build: .
+    container_name: gitcraft
+    restart: always
+#    volumes:
+#      - ./data:/var/lib/postgresql/data
+    networks:
+      - jshw
+#    environment:
+    ports:
+      - 2222:22
+
+
