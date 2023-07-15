@@ -6,3 +6,11 @@
 {"level":"info","message":"db_uri="}
 {"level":"info","message":"[OK] Sequelize synced."}
 {"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"error","name":"SequelizeConnectionError","original":{"code":"3D000","file":"postinit.c","length":89,"line":"945","name":"error","routine":"InitPostgres","severity":"FATAL"},"parent":{"code":"3D000","file":"postinit.c","length":89,"line":"945","name":"error","routine":"InitPostgres","severity":"FATAL"}}
+{"level":"info","message":"[ERROR] Server start failed."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"error","name":"SequelizeConnectionError","original":{"code":"3D000","file":"postinit.c","length":89,"line":"945","name":"error","routine":"InitPostgres","severity":"FATAL"},"parent":{"code":"3D000","file":"postinit.c","length":89,"line":"945","name":"error","routine":"InitPostgres","severity":"FATAL"}}
+{"level":"info","message":"[ERROR] Server start failed."}

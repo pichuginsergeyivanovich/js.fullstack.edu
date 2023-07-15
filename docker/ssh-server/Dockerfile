@@ -26,16 +26,23 @@ RUN useradd -rm -d /home/git -s /bin/bash -g root -G sudo -u 1000 git && \
 
 RUN mkdir /root/.ssh
 
-RUN service ssh start
-
-EXPOSE 22
-
 RUN mkdir /app/server
-
-RUN chmod 777 -R /app/
 
 COPY ./server/ /app/server/
 
 RUN chown -R git /app/server
 
-CMD ["/app/entry-point.sh"]
+COPY ./data/entry-point.sh /app/
+
+RUN chmod 777 -R /app/
+
+RUN chmod +x /app/entry-point.sh
+
+EXPOSE 22
+
+RUN service ssh start
+
+RUN cd /app/server && npm install
+
+ENTRYPOINT ["/app/entry-point.sh"]
+

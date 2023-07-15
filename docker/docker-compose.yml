@@ -49,6 +49,7 @@ services:
     restart: always
     volumes:
       - ./ssh-server/data:/app
+      - ./ssh-server/data/entry-point.sh:/app/entry-point.sh
       - ./ssh-server/server:/app/server
 #      - ./ssh-server/data/authorized_keys/authorized_keys:/home/git/.ssh/authorized_keys
 #      - ./ssh-server/keys/root_id_rsa:/root/.ssh/id_rsa
