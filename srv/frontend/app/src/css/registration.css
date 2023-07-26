@@ -1,0 +1,99 @@
+.title{
+
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.form-footer{
+    padding-bottom: 25px;
+}
+
+.container{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-inner{
+    width:100%;
+}
+
+.error_message{
+    color:red;
+}
+
+.form-field{
+    margin-left: auto;
+    width: 55%;
+    margin-right: auto;
+}
+
+.login-button{
+    padding:16px;
+}
+
+.container-p{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-p>div{
+    margin: 16px;
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+
+
+.dd-custom{
+    
+    position: absolute; 
+    inset: 0px auto auto 0px; 
+    transform: translate3d(264px, 136px, 0px);
+
+}
+
+.container-p .dropdown-toggle::after {
+    display: none;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+
+.container-p .btn-success {
+    --bs-btn-color: unset;
+    --bs-btn-bg: unset;
+    --bs-btn-border-color: unset;
+    --bs-btn-hover-color: unset;
+    --bs-btn-hover-bg: unset;
+    --bs-btn-hover-border-color: unset;
+    --bs-btn-focus-shadow-rgb: unset;
+    --bs-btn-active-color: unset;
+    --bs-btn-active-bg: unset;
+    --bs-btn-active-border-color: unset;
+    --bs-btn-active-shadow: unset;
+    --bs-btn-disabled-color: unset;
+    --bs-btn-disabled-bg: unset;
+    --bs-btn-disabled-border-color: unset;
+}
+
+.card-title-container{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+.card-title-container-header{
+    line-height: unset;
+    margin-top: 4px;
+}
+.card-title-splitter{
+    width:29px;
+}
+
+.unset-backcolor{
+    background-color: unset!important;
+}

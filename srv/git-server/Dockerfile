@@ -5,7 +5,7 @@ RUN mkdir /var/run/sshd
 WORKDIR app
 
 
-RUN apt update && apt install ssh openssh-server sudo curl -y
+RUN apt update && apt install ssh openssh-server sudo curl git-core -y
 
 #--------------------------git stuff
 
@@ -38,27 +38,25 @@ EXPOSE 22
 
 #--------------------------node stuff
 
-#RUN apt-get remove npm -y
+RUN apt-get remove npm -y
 
-#RUN apt-get remove nodejs -y
+RUN apt-get remove nodejs -y
 
-#RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 
-#RUN apt-get install nodejs -y
+RUN apt-get install nodejs -y
 
-##RUN apt-get install npm -y
-
-#RUN node -v
+#RUN apt-get install npm -y
 
 #--------------------------deploy project into container
 
-#RUN mkdir /app/server
+RUN mkdir /app/server
 
-#COPY ./server/ /app/server/
+COPY ./server/ /app/server/
 
-#RUN chown -R git /app/server
+RUN chown -R git /app/server
 
-#RUN chmod 777 -R /app/
+RUN chmod 777 -R /app/
 
 #--------------------------start script stuff
 

@@ -23,6 +23,22 @@ services:
       - 22:22
       - 8080:8080 
 
+  frontend:
+    image: frontend:latest
+    container_name: frontend
+    restart: always
+#    volumes:
+#      - ./.ssh/sshd_config:/etc/ssh/sshd_config
+#      - ./.ssh/ssh_config:/etc/ssh/ssh_config
+#      - ./.ssh:/root/.ssh
+#      - ./git-server/server:/app/server
+#    environment:
+    depends_on:
+      - gitcraft
+    ports:
+      - 3000:3000
+
+
   postgres-db:
     image: postgres:latest
     container_name: postgres-db

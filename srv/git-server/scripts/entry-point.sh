@@ -26,6 +26,10 @@ echo "getting host key's fingerprints ..."
 ssh-keyscan -t ssh-ed25519 localhost >> /root/.ssh/known_hosts
 ssh-keyscan -t ssh-ed25519 ssh-server >> /root/.ssh/known_hosts
 
+
+echo "Starting node app server ..."
+cd /app/server && npm run dev
+
 echo "wheeling ..."
 i=1
 while [ "$i" -ne 0 ]
