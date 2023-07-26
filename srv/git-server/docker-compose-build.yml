@@ -1,0 +1,20 @@
+version: '2.4'
+
+networks:
+  jshw1:
+    driver: bridge
+
+services:
+  ssh-server:
+    build: .
+    image: docker-ssh-server:latest
+    container_name: ssh-server
+    restart: always
+
+    networks:
+      - jshw1
+#    environment:
+    ports:
+      - 2222:22
+
+

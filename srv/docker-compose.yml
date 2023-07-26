@@ -1,0 +1,54 @@
+version: '2.4'
+
+networks:
+  jshw1:
+    driver: bridge
+
+
+services:
+
+  gitcraft:
+    image: docker-ssh-server:latest
+    container_name: ssh-server
+    restart: always
+    volumes:
+#      - ./.ssh/sshd_config:/etc/ssh/sshd_config
+#      - ./.ssh/ssh_config:/etc/ssh/ssh_config
+#      - ./.ssh:/root/.ssh
+      - ./git-server/server:/app/server
+#    environment:
+    depends_on:
+      - postgres-db
+    ports:
+      - 22:22
+      - 8080:8080 
+
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+#      - ./volumes/postgres-db:/var/lib/postgresql/backup
+#      - ./volumes/postgres-db/createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+#      - ./volumes/postgres-db/access.sh:/docker-entrypoint-initdb.d/access.sh
+#      - ./volumes/postgres-db/restore.sh:/docker-entrypoint-initdb.d/restore.sh
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: pgadmin
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - postgres-db

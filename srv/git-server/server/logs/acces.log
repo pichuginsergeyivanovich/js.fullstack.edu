@@ -1,0 +1,187 @@
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"error"}
+{"level":"info","message":"repos found="}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"cmd":"git push origin master","code":1,"killed":false,"level":"error","signal":null,"stderr":"error: remote unpack failed: unable to create temporary object directory\nTo localhost:/app/server/storage/testrepo.git\n ! [remote rejected] master -> master (unpacker error)\nerror: failed to push some refs to 'localhost:/app/server/storage/testrepo.git'\n","stdout":""}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
+{"level":"info","message":"path="}
+{"level":"info","message":"db_uri="}
+{"level":"info","message":"[OK] Sequelize synced."}
+{"level":"info","message":"[OK] Server started on port 8080."}
