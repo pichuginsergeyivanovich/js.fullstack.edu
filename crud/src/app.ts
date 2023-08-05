@@ -11,6 +11,7 @@ opts.audience = 'pichuginsergeyaudience.com';
 
 //import helloRouter from './hello.router';
 //import authRouter from './auth.router';
+
 import jwt from 'jsonwebtoken'
 const app = express();
 const port = 3000;
@@ -56,6 +57,7 @@ router.get('/hello',
     });
   
 app.use(router);
+
 app.listen(port, () => {
     console.log(`[server]: Server is running at http://localhost:${port}`);
   });

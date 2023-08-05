@@ -3,9 +3,11 @@ import repositoryService from '../servces/repository.service';
 import Project from '../models/project.model';
 //import logger from '../logger';
 import Repository from '../models/repository.model';
+import projectService from '../servces/project.service';
 //import projectService from '../servces/project.service';
 
 class RepositoryController{
+
 
     async getAllRepositories(req: Request, res: Response, next: NextFunction){
         try{
@@ -75,6 +77,26 @@ class RepositoryController{
             next(e);
         }
     }
+
+    async getRepositoryFiles(req: Request, res: Response, next: NextFunction){
+        try{
+            console.log("req.user=", req.user);
+            console.log("req.params=",req.params);
+
+            console.log("req.params=",req.body.branch);
+            console.log("req.params=",req.body.path);
+
+            const files=await repositoryService.getRepositoryFiles(req.params.project, req.params.repository, req.body.branch, req.body.path)
+
+
+            res.send(files);
+        }
+        catch(e){
+            next(e);
+        }
+    }
+
+
 }
 
 export default new RepositoryController();

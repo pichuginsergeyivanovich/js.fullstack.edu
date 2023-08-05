@@ -56,7 +56,7 @@ const Repositories = () => {
              </Dropdown>
              </div>
              <p className="card-text">{e.description}</p>
-             <a href={`api/${e.name}/repositories`} className="btn btn-primary">Go this project</a>
+             <a href={`/${project}/${e.name}/`} className="btn btn-primary">Go this repository</a>
           </div>
 
           ))

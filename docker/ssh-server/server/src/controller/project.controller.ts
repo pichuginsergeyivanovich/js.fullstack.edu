@@ -5,6 +5,7 @@ class ProjectController{
 
     async getAllProjects(req: Request, res: Response, next: NextFunction){
         try{
+            console.log('call to ProjectController.getAllProjects')
             const users = await projectService.getAllProjects();
             res.send(users)
         }

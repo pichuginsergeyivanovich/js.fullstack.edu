@@ -22,6 +22,10 @@ router.post("/:project/repositories/",
     passport.authenticate("jwt",{session:false}),
     repositoryController.getAllRepositories
     )
+router.post("/:project/:repository/files",
+    passport.authenticate("jwt",{session:false}),
+    repositoryController.getRepositoryFiles
+    )
 
 
 export default router;

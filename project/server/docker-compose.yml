@@ -1,0 +1,30 @@
+version: '3.7'
+
+networks:
+  exe:
+    driver: bridge
+
+services:
+  git_server:
+#    user: "2999"
+    restart: always
+    container_name: git_server
+    image: server_git_server:latest
+    ports:
+      - 3000:3000
+      - "2222:22"
+#    entrypoint: ["npm", "run", "dev"]
+#    env_file:
+#      - ./.env.action_server
+    volumes:
+       - ./dist:/app/dist
+#       - ./volumes/etc/ssh:/etc/ssh
+#       - ./volumes/.ssh:/home/git/.ssh 
+       - ./volumes/storage/sshd_config:/etc/ssh/sshd_config
+       - ./src/sshd.conf:/usr/lib/tmpfiles.d/sshd.conf
+    sysctls:
+      - net.core.somaxconn=65535
+    logging:
+      driver: local
+    networks:
+      - exe

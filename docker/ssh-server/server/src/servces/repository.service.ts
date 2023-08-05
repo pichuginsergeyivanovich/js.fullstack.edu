@@ -98,7 +98,7 @@ class RepositoryService{
         
         await cmd("git push origin master", tmp_dir, errors)
         
-        await cmd(`rm -rd ${tmp_dir}`, tmp_dir, errors)
+//        await cmd(`rm -rd ${tmp_dir}`, tmp_dir, errors)
 
         return {
           error: false, 
@@ -144,14 +144,14 @@ class RepositoryService{
 
       console.log("return error, rollback changes")
 
-      await cmd(`rm -rd ${tmp_dir}`);
+/*      await cmd(`rm -rd ${tmp_dir}`);
 
       await cmd(`rm -rd ${dir}`);
 
       const count =  await Repository.destroy({
         where:{id:newRepo.id}
       });      
-
+*/
       return {
         error:true,
         text:JSON.stringify(errors)

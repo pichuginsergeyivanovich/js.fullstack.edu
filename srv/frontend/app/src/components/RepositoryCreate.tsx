@@ -41,7 +41,7 @@ const RepositoryCreate = () => {
     
         
           ProjectService.createRepo(project!, name, description).then(() => {
-              navigate(`/${project}/repositories`);
+              navigate(`/${project}/${name}/`);
               window.location.reload();
             },
             (error:any) => {
@@ -79,7 +79,7 @@ const RepositoryCreate = () => {
                     </div>
 
                     <div className="col-12">
-                        <button className="btn btn-primary" type="submit" ref={refSubmit}>Submit project creation</button>
+                        <button className="btn btn-primary" type="submit" ref={refSubmit}>Submit repository creation</button>
                     </div>
                 </form>
         </div>

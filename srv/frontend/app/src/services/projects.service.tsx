@@ -54,6 +54,47 @@ const API_PRJ_URL = "http://localhost:8080/api/projects/";
         return response.data;
       });
   };  
+
+  const getRepositoryFiles = (project:string, repository:string, branch:string, path:string) => {
+
+    const token=JSON.parse(localStorage.getItem("token")??"");
+
+    const data={"branch":branch, "path": path}
+
+    return axios
+      .post(`${API_URL}${project}/${repository}/files`,data, {headers:{"Authorization": `Bearer ${token}`}})
+      .then((response) => {
+        
+        //return response.data;
+
+        const data:string = response.data?.files?.stdout; 
+
+       if(data) {
+
+        console.log("response.data?.files?.stdout=",data);
+
+        const regex = new RegExp(/\d{0,}\s(?<type>\w{0,})\s[0-9A-Fa-f]{40}\t(?<path>(.*){0,}\n)/g);
+        
+        var result = Array.from( data.matchAll(regex)).map((e)=>{
+
+          console.log(e)
+
+          return {type:e.groups?.type.trim(), path:e.groups?.path.trim()}
+
+        })
+
+        return result
+      }
+
+        return []
+
+
+
+       
+
+      });
+  };  
+    
 const getProjectsTest = () => {
     return [
       {
@@ -127,7 +168,8 @@ const ProjectsService = {
     getProjects,
     create,
     getRepositories,
-    createRepo
+    createRepo,
+    getRepositoryFiles
   }
   
   export default ProjectsService;

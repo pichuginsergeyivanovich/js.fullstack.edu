@@ -11,6 +11,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
 import Projects from './components/Projects';
+import ProjectsCreate from './components/ProjectsCreate';
+import Repositories from './components/Repositories';
+import RepositoryCreate from './components/RepositoryCreate';
 
 function App() {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -56,6 +59,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects-create" element={<ProjectsCreate />} />
+          <Route path="/:project/repositories" element={<Repositories />} />
+          <Route path="/:project/repository-create" element={<RepositoryCreate />} />
           {/*<Route exact path="/profile" element={<Profile />} />
           <Route path="/user" element={<BoardUser />} />
           <Route path="/mod" element={<BoardModerator />} />

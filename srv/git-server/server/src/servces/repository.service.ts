@@ -15,33 +15,45 @@ async function cmd(command:string, cwd:string="", errors:Array<any>=[]) {
     console.log('stdout:', stdout);
     console.log('stderr:', stderr);
     console.log("[success]",command)
+    return {stdout:stdout, stderr:stderr}
   } catch (e:any) {
     errors.push(e);
     console.log("[error]",command)
     throw e;
   }
-}/*
-function cmd(...command: any[]) {
-    let p = spawn(command[0], command.slice(1));
-    return new Promise((resolve) => {
-      p.stdout.on("data", (x:any) => {
-        process.stdout.write(x.toString());
-      });
-      p.stderr.on("data", (x:any) => {
-        process.stderr.write(x.toString());
-      });
-      p.on("exit", (code:any) => {
-        resolve(code);
-      });
-    });
-  }
-*/
+}
 function sleep(ms:number) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
 class RepositoryService{
+
+  async getRepositoryFiles(project:string,  repository: string, branch:string, path:string) {
+
+    var errors:Array<any>=[]
+
+    var dir = `/app/server/storage/${repository}.git`;
+    try{
+
+      await cmd(`git config --global --add safe.directory ${dir}`, dir, errors)
+
+      const result = await cmd(`git ls-tree ${branch} "${path}"`, dir, errors)
+
+      console.log('result=',result)
+
+      return {
+        error: false, 
+        files: result,
+      };
+  
+}
+catch(e){
+
+  console.log("occur in catch", errors)
+  return {error:true}
+}
+  }
 
     async createRepository(repo: RepositoryDTO) {
 
@@ -98,7 +110,7 @@ class RepositoryService{
         
         await cmd("git push origin master", tmp_dir, errors)
         
-//        await cmd(`rm -rd ${tmp_dir}`, tmp_dir, errors)
+        await cmd(`rm -rd ${tmp_dir}`, tmp_dir, errors)
 
         return {
           error: false, 
@@ -106,35 +118,6 @@ class RepositoryService{
           text: `to clone use - git clone git@localhost:${dir}`,
           clone_ref: `git@localhost:${dir}`
         };
-
-        
-  /*      cmd("git init --bare", dir, errors).then(()=>{
-          cmd(`mkdir -p ${tmp_dir}`,"", errors).then(()=>{
-            cmd("git init", tmp_dir, errors).then(()=>{
-              cmd("touch readme.txt", tmp_dir, errors).then(()=>{
-                cmd(`git config user.email \"${user?.email}\"`, tmp_dir, errors).then(()=>{
-                  cmd(`git config user.name \"${user?.firstname} ${user?.lastname}\"`, tmp_dir, errors).then(()=>{
-                    cmd("git add . && git commit -m\"initial commit\"", tmp_dir, errors).then(()=>{
-                      cmd(`git remote add origin git@localhost:${dir}`, tmp_dir, errors).then(()=>{
-                        cmd(`git config --global --add safe.directory ${tmp_dir}`, tmp_dir, errors).then(()=>{
-                                      //cmd("chown -R git /app/server/storage/", tmp_dir).then(()=>{
-                                cmd("git push origin master", tmp_dir, errors).then(()=>{
-                                  cmd(`rm -rd ${tmp_dir}`, tmp_dir, errors).then(()=>{
-
-                                    return newRepo;
-                                        //    })
-                                          })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-      })
-    })
-    */
   }
   catch(e){
 
@@ -144,14 +127,14 @@ class RepositoryService{
 
       console.log("return error, rollback changes")
 
-/*      await cmd(`rm -rd ${tmp_dir}`);
+      await cmd(`rm -rd ${tmp_dir}`);
 
       await cmd(`rm -rd ${dir}`);
 
       const count =  await Repository.destroy({
         where:{id:newRepo.id}
       });      
-*/
+
       return {
         error:true,
         text:JSON.stringify(errors)

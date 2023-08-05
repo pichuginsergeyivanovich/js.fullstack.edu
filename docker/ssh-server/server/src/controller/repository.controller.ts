@@ -9,6 +9,8 @@ class RepositoryController{
 
     async getAllRepositories(req: Request, res: Response, next: NextFunction){
         try{
+            console.log('call to RepositoryController.getAllRepositories')
+
             const {userId} = req.user as any
 
             const project= await Project.findOne({

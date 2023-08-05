@@ -40,7 +40,7 @@ const Register = () => {
             setMessage(""); 
         }
         
-    },[email, password])
+    },[email, password, rpassword])
 
 
     

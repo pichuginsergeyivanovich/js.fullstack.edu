@@ -1,0 +1,17 @@
+{
+    "list":[
+        {
+            "name":"exe",
+            "path":"c:\\dev\\mark\\1\\exe"
+        },
+        {
+            "name":"msg",
+            "path":"c:\\dev\\mark\\msg"
+        },
+        {
+            "name":"web",
+            "path":"c:\\dev\\mark\\web"
+        }
+
+    ]
+}

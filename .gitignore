@@ -1,4 +1,5 @@
 hw07/postgresdb/data/*
 node_modules
-docker/data/*
-docker/pgadmin-data/*
+git-server/data/*
+git-server/pgadmin-data/*
+server/storage

@@ -97,3 +97,35 @@
 .unset-backcolor{
     background-color: unset!important;
 }
+
+.repository-container{
+    display:grid;
+    grid-template-columns: 200px auto;
+}
+
+.repository-container-content {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  .files-container{
+
+    display:grid;
+
+    grid-template-columns: 20px auto;
+
+  }
+  .files-row{
+    display:grid;
+    grid-template-columns: 20px auto;
+  }
+  /* .files-container >div{
+
+    
+
+  } */

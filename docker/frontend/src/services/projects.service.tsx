@@ -1,43 +1,60 @@
 
 import axios from "axios";
-const API_URL = "http://localhost:8080/api/public/auth/";
+
+const API_URL = "http://localhost:8080/api/";
+const API_PRJ_URL = "http://localhost:8080/api/projects/";
 
 
-const register = (email:string, password:string, lastname:string, firstname:string) => {
-  return axios.post(API_URL + "register", {
-    "email": email,
-    "password":password,
-    "lastname":lastname,
-    "firstname":firstname
-});
-};
+  const create = (name:string, description:string) => {
 
-const logout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    /*return axios.post(API_URL + "logout").then((response) => {
-      return response.data;
-    });*/
-  };
-
-
-const login = (username:string, password:string) => {
+    const token=JSON.parse(localStorage.getItem("token")??"");
+    
     return axios
-      .post(API_URL + "login", {"email": username, "password":password})
+      .post(API_PRJ_URL + "create", {"name": name, "description":description},{headers:{'Authorization':`Bearer ${token}`}})
       .then((response) => {
         console.log(response.data);
-        if (response.data.user) 
-          localStorage.setItem("user", JSON.stringify(response.data.user));
-        if (response.data.token) 
-          localStorage.setItem("token", JSON.stringify(response.data.token));
-        
-  
         return response.data;
       });
   };
+  const getProjects = () => {
+    const token=JSON.parse(localStorage.getItem("token")??"");
+    
+    return axios.get(API_PRJ_URL, {headers:{"Authorization": `Bearer ${token}`}})
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+    
+  };
+  const getRepositories = (project:string) => {
+    const token=JSON.parse(localStorage.getItem("token")??"");
 
+    console.log("front-getRepositories");
+    
+    return axios.post(`${API_URL}${project}/repositories/`,{}, {headers:{"Authorization": `Bearer ${token}`}})
+    
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+    
+  };
 
-const getProjects = () => {
+  const createRepo = (project:string, name:string, description:string) => {
+
+    const token=JSON.parse(localStorage.getItem("token")??"");
+    const data={"project":project, "name": name, "description":description}
+
+    console.log("front-createRepo");
+
+    return axios
+      .post(`${API_URL}${project}/repositories/create`,data, {headers:{"Authorization": `Bearer ${token}`}})
+      .then((response) => {
+        console.log(response.data);
+        return response.data;
+      });
+  };  
+const getProjectsTest = () => {
     return [
       {
           "id": 1,
@@ -107,7 +124,10 @@ const getProjects = () => {
   };
 
 const ProjectsService = {
-    getProjects
+    getProjects,
+    create,
+    getRepositories,
+    createRepo
   }
   
   export default ProjectsService;

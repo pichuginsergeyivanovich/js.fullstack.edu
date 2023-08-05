@@ -46,7 +46,7 @@ const Login = () => {
         
           AuthService.login(username, password).then(
             () => {
-              navigate("/profile");
+              navigate("/projects");
               window.location.reload();
             },
             (error:any) => {

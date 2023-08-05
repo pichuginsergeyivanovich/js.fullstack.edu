@@ -6,35 +6,28 @@ import ProjectsService from '../services/projects.service';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-const required = (value:boolean) => {
-    if (!value) {
-      return (
-        <div className="invalid-feedback d-block">
-          This field is required!
-        </div>
-      );
-    }
-  };
-
-
 const Projects = () => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [rpassword, setRPassword] = useState("");
-    const [lastname, setLastname] = useState("");
-    const [firstname, setFirstname] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState("");
-    const refPassword=useRef(null);
-    const refRepeatPassword=useRef(null);
-    const refSubmit=useRef(null);
-
-    const navigate = useNavigate();
+  const d:Array<any>=[];
+  const [plist, setPlist] = useState(d);
+  const navigate = useNavigate();
 
 
+  useEffect(()=>{
 
-    const plist = ProjectsService.getProjects();
+    ProjectsService.getProjects().then(resp=>{
+
+      var list:any=[...resp] as any;
+  
+        setPlist(list);
+  
+        console.log("plist=",list)
+  
+      });
+      
+    
+},[]);
+
 
     return (
       <div>
@@ -59,7 +52,7 @@ const Projects = () => {
              </Dropdown>
              </div>
              <p className="card-text">{e.description}</p>
-             <a href="#" className="btn btn-primary">Go this project</a>
+             <a href={`/${e.name}/repositories`} className="btn btn-primary">Go this project</a>
           </div>
 
           ))
@@ -67,7 +60,9 @@ const Projects = () => {
       }
       <div className="d-grid gap-2 col-12 mx-auto unset-backcolor" >
         <div className="d-grid gap-2 col-6 mx-auto unset-backcolor">
-          <button className="btn btn-primary" type="button">new project</button>
+          <button className="btn btn-primary" type="button" onClick={(e)=>{
+            navigate("/projects-create")
+          }}>new project</button>
         </div>
       </div>
 
