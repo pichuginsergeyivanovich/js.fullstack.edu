@@ -100,7 +100,7 @@
 
 .repository-container{
     display:grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: auto;
 }
 
 .repository-container-content {
@@ -123,9 +123,91 @@
   .files-row{
     display:grid;
     grid-template-columns: 20px auto;
+}
+ 
+  .commit-row{
+    display:grid;
+    grid-template-columns: 1fr 6fr 2fr 2fr 2fr;
+    grid-template-rows: 2fr repeat(1fr);
+    gap: 10px;
   }
-  /* .files-container >div{
+  .commit-row-hash-title{
 
+    justify-items: center;
+
+  }
+  .commit-row-hash-value{
+    justify-self: left;
+    align-self: center;
+ }
+ .commit-row-comment-value{
+    justify-self: left;
+    align-self: center;
+
+    font-family: var(--default-regular-font, -apple-system),BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 600;
+ }
+ .commit-row-age-value{
+    justify-self: left;
+    align-self: center;
     
+ }
+ .commit-row-author-value{
+    justify-self: left;
+    align-self: center;
+    color: #89888d;
+    font-family: var(--default-regular-font, -apple-system),BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,Cantarell,"Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";    
+ }
+ .author{
+    color: black;
+ }
+ .commit-row-committed-value{
+    justify-self: right;
+    align-self: center;
+ }
 
-  } */
+ .commit-row2{
+    display:grid;
+    width: 100%;
+    grid-template-columns: 40px auto 1fr;
+    grid-template-rows: 2fr repeat(1fr);
+    gap: 10px;
+    padding-top:8px;
+    padding-bottom:8px;
+    border-bottom: 1px solid #ececef;
+  }
+
+  .comment-cell{
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .avatar{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;;
+  }
+
+  .commit-date-header{
+
+    padding: 5px 10px;
+    background-color: #fbfafd;
+    border-bottom: 1px solid #ececef;
+    border-top: 1px solid #ececef;
+    font-size: 14px;
+
+    text-align: left;
+
+  }
+
+  .ssh-key-view{
+    word-break: break-all;
+    font-family: monospace;
+    border: 1px solid gray;
+  }
+
+
+
+  

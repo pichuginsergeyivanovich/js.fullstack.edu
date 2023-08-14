@@ -2,6 +2,7 @@ import '../css/registration.css';
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProjectService from "../services/projects.service";
+import BreadcrumbRow from './BreadCrumbRow';
 
 const RepositoryCreate = () => {
 
@@ -41,7 +42,7 @@ const RepositoryCreate = () => {
     
         
           ProjectService.createRepo(project!, name, description).then(() => {
-              navigate(`/${project}/${name}/`);
+              navigate(`/${project}/${name}/clone`);
               window.location.reload();
             },
             (error:any) => {
@@ -58,9 +59,11 @@ const RepositoryCreate = () => {
           );
         }
 
-    return (
+    return (<>
+    <BreadcrumbRow project={project} ></BreadcrumbRow>
 
         <div className="col-md-10 container">
+        
         <div className="card card-container container-inner">
             <h2 className='title'>New Repository Creation</h2>
                 <form className="row g-3 form-footer" onSubmit={handleSubmitCreate}>
@@ -84,6 +87,7 @@ const RepositoryCreate = () => {
                 </form>
         </div>
         </div>
+        </>
 
     );
 };

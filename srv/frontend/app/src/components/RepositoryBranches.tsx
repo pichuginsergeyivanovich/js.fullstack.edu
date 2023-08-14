@@ -3,46 +3,31 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProjectService from "../services/projects.service";
 import RepositoryActions from './RepositoryActions';
+import BreadcrumbRow from './BreadCrumbRow';
+import Sidebar from './Sidebar';
+import BranchList from './BranchList';
 
 const RepositoryBranches = (props:any) => {
 
     let { project, repository } = useParams();
 
-    console.log("useParams=",project);
-  
-    const navigate = useNavigate();
+      console.log("useParams=",project);
 
-
-    const onActionCloneHandler=(e:any, action:string)=>{
-     
-        const url = `/${project}/${repository}/${action}`
-        
-        navigate(url)
-        
-        console.log(action, " clicked")
-    }
 
     return (
-
+        <>
+        <Sidebar
+          settings="true"
+          repository={{ name: repository, project: project }}
+        />
         <div className="card card-container container-inner">
-            <div className='col-md-2'>
-              
-                <div>
-                    { <RepositoryActions
-                    
-                    onActionCloneHandler={onActionCloneHandler}
-                    /> }
-                </div>
+          <BreadcrumbRow project={project} repository={repository}></BreadcrumbRow>
+          
+        <BranchList></BranchList>
 
-            </div>
-            <div className='col-md-10'>
-
-            </div>
-
-        
-           
+          
         </div>
-
+      </>
 
     );
 };

@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import ProjectsService from '../services/projects.service';
 import Dropdown from 'react-bootstrap/Dropdown';
+import BreadcrumbRow from './BreadCrumbRow';
+import Sidebar from './Sidebar';
 
 
 const Repositories = () => {
@@ -34,7 +36,54 @@ const Repositories = () => {
 
 
     return (
-      <div>
+      <>
+      <Sidebar settings="true"/>
+      <div className="projects-container">
+            <ul>
+        <li className="card-body projects-title-header">
+        <div className="card-title-container">
+        <div className="card-title-container-header">
+                <h5 className="card-title projects-title">Your Project's Repositories</h5>
+        </div>
+        <button className="btn btn-primary button-vc" type="button"  onClick={(e) => {navigate(`/${project}/repository-create`)}}>new repository</button>
+          </div>
+        </li>
+        
+          {plist.map((e) => (
+          <li key={e.id} className="card-body">
+            <div className="projects-container-list-item-container ">
+              <div className="card-title-container-header">
+                <h5 className="projects-title">{e.name}</h5>
+              </div>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic" className="base-dropdown-toggle">
+                  &#8942;
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Edit</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Open</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Delete</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <p className="projects-text">{e.description}</p>
+            <a href={`/${project}/${e.name}/clone`} className="btn btn-primary">Go this repository</a>
+          </li>
+        ))}          
+        </ul>
+ 
+      </div>
+
+
+
+
+
+
+
+
+
+      {/* <div>
+      <BreadcrumbRow project={project} ></BreadcrumbRow>
       <h2 className='title'>{`${project} repositories`}</h2>
       <div className="container-p">
       { 
@@ -56,7 +105,7 @@ const Repositories = () => {
              </Dropdown>
              </div>
              <p className="card-text">{e.description}</p>
-             <a href={`/${project}/${e.name}/`} className="btn btn-primary">Go this repository</a>
+             <a href={`/${project}/${e.name}/clone`} className="btn btn-primary">Go this repository</a>
           </div>
 
           ))
@@ -71,7 +120,9 @@ const Repositories = () => {
       </div>
 
       </div>
-      </div>
+      </div> */}
+
+      </>
     );
 };
 

@@ -14,7 +14,7 @@ services:
     volumes:
 #      - ./.ssh/sshd_config:/etc/ssh/sshd_config
 #      - ./.ssh/ssh_config:/etc/ssh/ssh_config
-#      - ./.ssh:/root/.ssh
+#      - ./git-server/git/.ssh:/home/git/.ssh
       - ./git-server/server:/app/server
 #    environment:
     depends_on:

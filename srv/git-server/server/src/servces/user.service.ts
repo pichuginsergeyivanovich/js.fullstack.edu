@@ -29,22 +29,30 @@ console.log("userDTO=",userDTO)
 
     async getUser(loginDTO: LoginRequest){
 
-        const user = await User.findAll({
+        const user = await User.findOne({
             where:{
                 email: loginDTO.email
             }
         })
+        console.log("user from db=",user)
+        
+        if (!user)
+            throw new Error("No such user");
 
-        if(loginDTO.email==user[0].email && await bcrypt.compare(loginDTO.password, user[0].password)){
+            
+        
 
-            const token=jwt.sign({
-                userId: user[0].id,
-                email:user[0].email
+        let valid_pass = await bcrypt.compare(loginDTO.password, user.password)
+
+        if (!valid_pass)
+            throw new Error("Invalid credentials");
+
+        const token=jwt.sign({
+                userId: user.id,
+                email:user.email
             }
                 , process.env.JWTSECRET as string);
-            return {"token":token, "user":user[0].email};
-
-        }
+            return {"token":token, "user":user.email};
     }
     // async register(data: RegisterRequest ){
     //     const user = await userService.createUser(userDTO);

@@ -38,13 +38,13 @@ app.use("/api", router)
 
 async function start(){
     try{
-        await sequelize.sync({alter:true, force:true})
-        .then(()=>{
-            Role.bulkCreate([
-                {id:1, name:UserRoles.ADMIN},
-                {id:2, name:UserRoles.USER}
-            ]);
-        });
+         await sequelize.sync({alter:true, force:true})
+         .then(()=>{
+             Role.bulkCreate([
+                 {id:1, name:UserRoles.ADMIN},
+                 {id:2, name:UserRoles.USER}
+             ]);
+         });
         logger.info("[OK] Sequelize synced.")
 
         app.listen(port);

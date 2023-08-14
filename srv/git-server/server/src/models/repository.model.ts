@@ -22,4 +22,8 @@ export default class Repository extends Model{
     @ForeignKey(()=>Project)
     @Column
     projectId!:number
+
+    @Column(DataType.STRING)
+    project_name!:string
+
 }

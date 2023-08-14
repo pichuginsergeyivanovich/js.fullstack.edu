@@ -85,91 +85,87 @@ const API_PRJ_URL = "http://localhost:8080/api/projects/";
 
         return result
       }
-
         return []
-
-
-
-       
-
       });
   };  
     
-const getProjectsTest = () => {
-    return [
-      {
-          "id": 1,
-          "name": "moscow project",
-          "description": "test description",
-          "userId": 1,
-          "createdAt": "2023-07-11T19:39:17.609Z",
-          "updatedAt": "2023-07-11T19:39:17.609Z"
-      },
-      {
-          "id": 2,
-          "name": "vocation",
-          "description": "test description",
-          "userId": 1,
-          "createdAt": "2023-07-11T19:39:20.340Z",
-          "updatedAt": "2023-07-11T19:39:20.340Z"
-      },
-      {
-          "id": 3,
-          "name": "new year template",
-          "description": "test description",
-          "userId": 1,
-          "createdAt": "2023-07-11T19:39:21.223Z",
-          "updatedAt": "2023-07-11T19:39:21.223Z"
-      },
-      {
-          "id": 4,
-          "name": "auth dev server",
-          "description": "test description",
-          "userId": 1,
-          "createdAt": "2023-07-11T19:39:23.280Z",
-          "updatedAt": "2023-07-11T19:39:23.280Z"
-      },
-      {
-        "id": 5,
-        "name": "react project",
-        "description": "test description",
-        "userId": 1,
-        "createdAt": "2023-07-11T19:39:17.609Z",
-        "updatedAt": "2023-07-11T19:39:17.609Z"
-    },
-    {
-        "id": 6,
-        "name": "jsonp implement",
-        "description": "test description",
-        "userId": 1,
-        "createdAt": "2023-07-11T19:39:20.340Z",
-        "updatedAt": "2023-07-11T19:39:20.340Z"
-    },
-    {
-        "id": 7,
-        "name": "javascript tuts",
-        "description": "test description",
-        "userId": 1,
-        "createdAt": "2023-07-11T19:39:21.223Z",
-        "updatedAt": "2023-07-11T19:39:21.223Z"
-    },
-    {
-        "id": 8,
-        "name": "git server",
-        "description": "test description",
-        "userId": 1,
-        "createdAt": "2023-07-11T19:39:23.280Z",
-        "updatedAt": "2023-07-11T19:39:23.280Z"
-    }
-    ]
-  };
 
+
+  const getRepositoryCommits = (project:string, repository:string, branch:string, path:string) => {
+
+    console.log("getRepositoryCommits called");
+
+    const token=JSON.parse(localStorage.getItem("token")??"");
+
+    const data={"branch":branch, "path": path}
+
+    return axios
+      .post(`${API_URL}${project}/${repository}/commits`,data, {headers:{"Authorization": `Bearer ${token}`}})
+      .then((response) => {
+        
+        console.log("response.data.commits=",response.data.commits);
+       
+        const data = response.data?.commits; 
+
+        return data
+       
+      });
+  };    
+
+
+const getRepositoryBranches = (project:string, repository:string, branch:string) => {
+
+    const token=JSON.parse(localStorage.getItem("token")??"");
+
+    
+    console.log("getRepositoryBranches in projectservice")
+
+    return axios
+      .post(`${API_URL}${project}/${repository}/branches`,null, {headers:{"Authorization": `Bearer ${token}`}})
+      .then((response) => {
+
+        const data:string = response.data?.branches
+        
+        console.log("data=",data); 
+
+        if(data){
+
+        const regex = new RegExp(/(?<selected>\*|\s)\s(?<name>\S*)\s*(?<hash>[0-9a-zA-Z]{7})/g);
+        
+        var result = Array.from( data.matchAll(regex)).map((e)=>{
+
+          console.log(e)
+
+          return {selected:e.groups?.selected.trim()==='*', name:e.groups?.name.trim(), hash:e.groups?.hash}
+        });
+
+        
+        
+        console.log("getRepositoryBranches in projectservice - then - response=",result);
+
+        console.log("getRepositoryBranches in projectservice - then - response.data.branches=",response.data.branches);
+       
+        
+
+        return result
+      }        
+        return []
+      });
+    
+  };    
+
+
+
+      
 const ProjectsService = {
     getProjects,
     create,
     getRepositories,
     createRepo,
-    getRepositoryFiles
+    getRepositoryFiles,
+    getRepositoryCommits,
+    getRepositoryBranches,
+
   }
   
   export default ProjectsService;

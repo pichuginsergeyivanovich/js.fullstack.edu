@@ -6,7 +6,7 @@ import AuthService from '../services/auth.service';
 
 function Header(props: any) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
   <div className="container-fluid">
     <a className="navbar-brand" href="#">GitCraft</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,21 +39,23 @@ function Header(props: any) {
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form> */}
-       <LoggedInUser user={props.user} />    
+       
 
           {props.user ? (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a href={"/profile"} className="nav-link">
-                {props.user}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="/logout" className="nav-link" onClick={props.logOut}>
-                LogOut
-              </a>
-            </li>
-          </div>
+          <LoggedInUser user={props.user}  onLogout={props.logOut}/>    
+
+          // <div className="navbar-nav ml-auto">
+          //   <li className="nav-item">
+          //     <a href={"/profile"} className="nav-link">
+          //       {props.user}
+          //     </a>
+          //   </li>
+          //   <li className="nav-item">
+          //     <a href="/logout" className="nav-link" onClick={props.logOut}>
+          //       LogOut
+          //     </a>
+          //   </li>
+          // </div>
         ) : (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">

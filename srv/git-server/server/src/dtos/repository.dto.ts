@@ -3,4 +3,5 @@ export interface RepositoryDTO{
     description:string
     userId:number
     projectId:number
+    project_name:string
 }

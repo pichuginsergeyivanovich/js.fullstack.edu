@@ -32,8 +32,8 @@ class RepositoryService{
   async getRepositoryFiles(project:string,  repository: string, branch:string, path:string) {
 
     var errors:Array<any>=[]
-
-    var dir = `/app/server/storage/${repository}.git`;
+    var dir = `/app/server/storage/${project}/${repository}.git`;
+    
     try{
 
       await cmd(`git config --global --add safe.directory ${dir}`, dir, errors)
@@ -55,6 +55,62 @@ catch(e){
 }
   }
 
+async getRepositoryCommits(project:string,  repository: string, branch:string, path:string) {
+
+    var errors:Array<any>=[]
+    var dir = `/app/server/storage/${project}/${repository}.git`;
+    
+    try{
+
+          await cmd(`git config --global --add safe.directory ${dir}`, dir, errors)
+
+          const result = await cmd(`git log --pretty=format:'{\"hash\": \"%h\", \"author\": \"%an\", \"age\": \"%ar\", \"comment\": \"%s\", \"committed\":\"%ci\"},' ${branch}`, dir, errors)
+
+          const jres= `[${result?.stdout}]`; 
+
+          console.log('result=',jres)
+
+          return {
+            error: false, 
+            commits: jres,
+          };
+      }
+      catch(e){
+
+          console.log("occur in catch", errors)
+          return {error:true}
+      }
+}
+async getRepositoryBranches(project:string, repository: string) {
+
+  var errors:Array<any>=[]
+
+  
+  var dir = `/app/server/storage/${project}/${repository}.git`;
+
+  try{
+
+        console.log("getRepositoryBranches - server in repositoryservice")
+
+        await cmd(`git config --global --add safe.directory ${dir}`, dir, errors)
+
+        const result = await cmd(`git branch --all --verbose --sort=-committerdate`, dir, errors)
+
+        console.log('result=',result?.stdout)
+
+        return {
+          error: false, 
+          branches: result?.stdout,
+        };
+    }
+    catch(e){
+
+        console.log("occur in catch", errors)
+        return {error:true}
+    }
+}
+
+
     async createRepository(repo: RepositoryDTO) {
 
       var errors:Array<any>=[]
@@ -62,12 +118,12 @@ catch(e){
         name:repo.name,
         description:repo.description,
         userId:repo.userId,
-        projectId:repo.projectId
+        projectId:repo.projectId,
+        project_name:repo.project_name
     });
-    var dir = `/app/server/storage/${repo.name}.git`;
-    var tmp_dir = `/app/server/storage/${repo.name}.tmp`;
+    var dir = `/app/server/storage/${repo.project_name}/${repo.name}.git`;
+    var tmp_dir = `/app/server/storage/${repo.project_name}/${repo.name}.tmp`;
     const force_recreate_repo=true;
-
 
       try{
 

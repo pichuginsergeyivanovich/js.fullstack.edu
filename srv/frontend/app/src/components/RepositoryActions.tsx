@@ -1,12 +1,33 @@
+import { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import { ListGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Dropdown, Tab } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function RepositoryActions(props:any) {
+
+  const navigate = useNavigate();
+
+  const [activeKey, SetActiveKey] = useState("0")
+
+
+  useEffect(()=>{
+
+    const skey = props?.active_key?props?.active_key:"0"
+    console.log("set key = ",skey)
+    SetActiveKey(skey)
+
+  },[props?.active_key])
+  
+
+
+
   return (
-    <Accordion defaultActiveKey="0">
+    <Accordion activeKey={activeKey} defaultActiveKey="0" onSelect={(e) => SetActiveKey(String(e))} >
       <Accordion.Item eventKey="0">
         <Accordion.Header>Repository</Accordion.Header>
         <Accordion.Body>
@@ -17,39 +38,16 @@ function RepositoryActions(props:any) {
           <ListGroup.Item action onClick={(e)=>props.onActionCloneHandler(e,"files")}>Files</ListGroup.Item>
           <ListGroup.Item action onClick={(e)=>props.onActionCloneHandler(e,"commits")}>Commits</ListGroup.Item>
           <ListGroup.Item action onClick={(e)=>props.onActionCloneHandler(e,"branches")}>Branches</ListGroup.Item>
-          {/* <ListGroup.Item action variant="success">
-            Success
-          </ListGroup.Item>
-          <ListGroup.Item action variant="danger">
-            Danger
-          </ListGroup.Item>
-          <ListGroup.Item action variant="warning">
-            Warning
-          </ListGroup.Item>
-          <ListGroup.Item action variant="info">
-            Info
-          </ListGroup.Item>
-          <ListGroup.Item action variant="light">
-            Light
-          </ListGroup.Item>
-          <ListGroup.Item action variant="dark">
-            Dark
-          </ListGroup.Item> */}
         </ListGroup>
-
-          
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Header>Settings</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <ListGroup>
+          <ListGroup.Item action onClick={(e)=>props.onActionCloneHandler(e,"profile")}>Profile</ListGroup.Item>
+          <ListGroup.Item action onClick={(e)=>navigate("/settings/sshkeys")}>SSH Keys</ListGroup.Item>
+        </ListGroup>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

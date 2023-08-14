@@ -1,6 +1,6 @@
 import './css/App.css';
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useParams } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 //import 'bootstrap/dist/css/bootstrap.css';
@@ -19,12 +19,14 @@ import RepositoryClone from './components/RepositoryClone';
 import RepositoryFiles from './components/RepositoryFiles';
 import RepositoryCommits from './components/RepositoryCommits';
 import RepositoryBranches from './components/RepositoryBranches';
+import BreadcrumbRow from './components/BreadCrumbRow';
+import SettingsSSHKeys from './components/SettingsSSHKeys';
 
 function App(props:any) {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-  
+
   useEffect(() => {
     const user = AuthService.getCurrentUser();
     console.log("set username in useefferct=",user)
@@ -34,6 +36,8 @@ function App(props:any) {
       //setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
       //setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
     }
+
+    
 
 /*    EventBus.on("logout", () => {
       logOut();
@@ -57,12 +61,14 @@ function App(props:any) {
     
     <div className="App">
       <Header user={currentUser} logOut={logOut}></Header>
-      <div className=".container-fluid">
+        <div className='maincontainer'>
         <Routes>
-           <Route path={"/"} element={<Home />} />
+           <Route path={"/"} element={<Login />} />
           {/*<Route exact path={"/home"} element={<Home />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/settings" element={<SettingsSSHKeys />} />
+          <Route path="/settings/sshkeys" element={<SettingsSSHKeys {...props} />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects-create" element={<ProjectsCreate />} />
           <Route path="/:project/repositories" element={<Repositories />} />
@@ -78,10 +84,7 @@ function App(props:any) {
           <Route path="/admin" element={<BoardAdmin />} /> */}
         </Routes>
       </div>
-
-
-      
-    </div>
+      </div>
   );
 }
 

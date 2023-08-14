@@ -2,6 +2,7 @@ import '../css/registration.css';
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectService from "../services/projects.service";
+import Sidebar from './Sidebar';
 
 const ProjectsCreate = () => {
 
@@ -54,6 +55,8 @@ const ProjectsCreate = () => {
         }
 
     return (
+        <>
+      <Sidebar settings="true"/>
 
         <div className="col-md-10 container">
         <div className="card card-container container-inner">
@@ -79,7 +82,7 @@ const ProjectsCreate = () => {
                 </form>
         </div>
         </div>
-
+        </>
     );
 };
 

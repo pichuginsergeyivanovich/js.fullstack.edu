@@ -66,7 +66,7 @@ class RepositoryController{
 
             console.log("projectId=", projectId)
 
-            const dto={name: req.body.name, description: req.body.description, userId: userId, projectId: projectId}
+            const dto={name: req.body.name, description: req.body.description, userId: userId, projectId: projectId, project_name:req.params.project}
 
             const newProject = await repositoryService.createRepository(dto)
             
@@ -96,6 +96,44 @@ class RepositoryController{
         }
     }
 
+    async getRepositoryCommits(req: Request, res: Response, next: NextFunction){
+        try{
+
+            console.log("occur in getRepositoryCommits at server")
+
+            console.log("req.user=", req.user);
+            console.log("req.params=",req.params);
+
+            console.log("req.params=",req.body.branch);
+            console.log("req.params=",req.body.path);
+
+            const commits=await repositoryService.getRepositoryCommits(req.params.project, req.params.repository, req.body.branch, req.body.path)
+
+
+            res.send(commits);
+        }
+        catch(e){
+            next(e);
+        }
+    }    
+    async getRepositoryBranches(req: Request, res: Response, next: NextFunction){
+        try{
+            console.log("getRepositoryBranches-server begin in repositorycontroller");
+            console.log("req.user=", req.user);
+            console.log("req.params=",req.params);
+
+            console.log("req.params=",req.body.branch);
+            console.log("req.params=",req.body.path);
+
+            const branches=await repositoryService.getRepositoryBranches(req.params.project, req.params.repository)
+
+
+            res.send(branches);
+        }
+        catch(e){
+            next(e);
+        }
+    }        
 
 }
 

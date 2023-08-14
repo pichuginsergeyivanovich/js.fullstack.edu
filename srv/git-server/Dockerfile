@@ -20,7 +20,8 @@ RUN mkdir -p /home/git/.ssh && \
 COPY id_rsa.pub /home/git/.ssh/authorized_keys
 
 RUN chown -R git:git /home/git/.ssh && \
-    chmod 600 /home/git/.ssh/authorized_keys
+    chmod 600 /home/git/.ssh/authorized_keys && \
+     usermod -a -G git root
 
 #--------------------------ssh stuff
 

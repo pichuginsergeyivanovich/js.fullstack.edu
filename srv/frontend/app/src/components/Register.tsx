@@ -86,7 +86,7 @@ const onChangeRepeatPassword=(e:any)=>{
     
         
           AuthService.register(email, password, lastname, firstname).then(() => {
-              navigate("/profile");
+              navigate("/login");
               window.location.reload();
             },
             (error:any) => {
@@ -104,7 +104,8 @@ const onChangeRepeatPassword=(e:any)=>{
         }
 
     return (
-
+        <>
+        <div></div>
         <div className="col-md-10 container">
         <div className="card card-container container-inner">
             <h2 className='title'>Registration</h2>
@@ -141,6 +142,7 @@ const onChangeRepeatPassword=(e:any)=>{
                 </form>
         </div>
         </div>
+        </>
 
     );
 };
